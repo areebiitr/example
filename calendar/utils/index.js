@@ -5,7 +5,7 @@
  */
 export function getWeekStartDate(date) {
     const startDate = new Date(date.getTime());
-    while (startDate.getDay() !== DAYS.SUNDAY) {
+    while (startDate.getDay() !== 0) {
         startDate.setDate(startDate.getDate() - 1);
     }
     return startDate;

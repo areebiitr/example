@@ -1,5 +1,6 @@
 import React from 'react';
 import { VIEWS } from '../constants';
+import MonthView from './MonthView';
 
 export default class CalendarContainer extends React.Component {
     constructor(props) {
@@ -13,6 +14,17 @@ export default class CalendarContainer extends React.Component {
     }
 
     render() {
-        return <span>Lets start coding</span>;
+        const { date} = this.state;
+        const currentDate = date.getDate();
+        const month = date.getMonth();
+        const year = date.getFullYear();
+
+        return (
+            <MonthView
+                currentDate={currentDate}
+                month={month}
+                year={year}
+            />
+        );
     }
 }
